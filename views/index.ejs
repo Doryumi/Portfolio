@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Adicione um fallback caso title não exista -->
+    <title><%= typeof title !== 'undefined' ? title : 'Título Padrão' %></title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Meu Portfolio</h1>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Meu Portfolio</div>
+            <ul class="nav-links">
+                <% sections.forEach(section => { %>
+                    <li><a href="#<%= section %>"><%= section.charAt(0).toUpperCase() + section.slice(1) %></a></li>
+                <% }); %>
+            </ul>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <% sections.forEach(section => { %>
+            <section id="<%= section %>">
+            </section>
+        <% }); %>
+    </main>
+
+    <script src="/public/js/script.js"></script>
 </body>
 </html>

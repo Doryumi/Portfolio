@@ -6,11 +6,20 @@
   "name": "portfolio",
   "version": "1.0.0",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doryumi/Portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Doryumi/Portfolio/issues"
+  },
+  "homepage": "https://github.com/Doryumi/Portfolio#readme"
 }

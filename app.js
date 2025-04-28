@@ -1,15 +1,16 @@
 import express from 'express';
-
 const app = express();
-const port = 3000;
 
+// Configurações do EJS
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.use(express.static('public'));
 
+// Rotas
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', {
+        title: 'Meu Portfólio',
+        sections: ['home', 'sobre', 'projetos', 'contato']
+    });
 });
 
-app.listen(port,() => {
-    console.log(`Servidor rodando na porta ${port}`);
-});
+app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
